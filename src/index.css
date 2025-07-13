@@ -1,1 +1,77 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.react-calendar {
+  width: 100% !important;
+  max-width: none !important;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  background-color: white;
+  color: black;
+}
+
+/* 🌙 Dark mode */
+.dark .react-calendar {
+  background-color: #1f2937; /* gray-800 */
+  color: #f9fafb; /* gray-50 */
+}
+
+/* Day tiles */
+.react-calendar__tile {
+  padding: 0.8rem 0.2rem !important;
+  min-height: 80px;
+  transition: background 0.2s;
+}
+
+/* Selected day */
+.react-calendar__tile--active {
+  background-color: #f59e0b !important; /* amber-500 */
+  color: white !important;
+  border-radius: 8px;
+}
+
+.dark .react-calendar__tile--active {
+  background-color: #d97706 !important; /* darker amber */
+  color: white !important;
+}
+
+/* Hover effect */
+.react-calendar__tile--active:hover {
+  background-color: #d97706 !important;
+  color: white !important;
+}
+
+/* Weekday headers */
+.react-calendar__month-view__weekdays {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #fef3c7;
+  color: #1f2937;
+}
+
+.dark .react-calendar__month-view__weekdays {
+  background-color: #374151; /* gray-700 */
+  color: #f9fafb;
+}
+
+/* Navigation buttons */
+.react-calendar__navigation {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.75rem;
+  background-color: #fef3c7; /* amber-100 */
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .react-calendar__navigation {
+  background-color: #374151; /* gray-700 */
+  color: #f9fafb;
+}
+
+.react-calendar {
+  transition: background-color 0.3s, color 0.3s;
+}
